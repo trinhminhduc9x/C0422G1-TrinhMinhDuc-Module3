@@ -1,25 +1,52 @@
 create database  student_management;
 use student_management;
-create table teacher (
-id int auto_increment,
-name varchar(50),
-age int,
-contry varchar (50),
-primary key(id)
+CREATE TABLE teacher (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50),
+    age INT,
+    contry VARCHAR(50),
+    PRIMARY KEY (id)
 );
-create table student (
-id int auto_increment,
-name varchar(50),
-primary key(id)
+CREATE TABLE student (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50),
+    PRIMARY KEY (id)
 );
+-- them vao
 insert into student(name) value ( "minh duc"),("minh duc dep trai"),( "minh duc goodboy");
-select * from student;
+-- xem bang
+SELECT 
+    *
+FROM
+    student;
+-- them cot
 alter table student add age int;
+-- them gia tri vao cot ko can key 
 set sql_safe_updates = 0;
-update student set student.age = 5 where name ="minh duc";
+UPDATE student 
+SET 
+    student.age = 5
+WHERE
+    name = 'minh duc';
 set sql_safe_updates = 1;
-select * from student;
+-- xoa gia tri ko can key 
+SELECT 
+    *
+FROM
+    student;
 set sql_safe_updates = 0;
-delete from student where name ="minh duc dep trai";
+DELETE FROM student 
+WHERE
+    name = 'minh duc dep trai';
 set sql_safe_updates = 1;
-select * from student;
+-- them gia tri vao cot can key 
+UPDATE student 
+SET 
+    student.age = 3
+WHERE
+    id = 4;
+
+SELECT 
+    *
+FROM
+    student;
