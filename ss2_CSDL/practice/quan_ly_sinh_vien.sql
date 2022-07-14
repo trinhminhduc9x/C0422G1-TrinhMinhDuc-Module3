@@ -1,3 +1,4 @@
+drop database if exists quanlysinhvien;
 CREATE DATABASE QuanLySinhVien;
 USE QuanLySinhVien;
 CREATE TABLE Class

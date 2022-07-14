@@ -1,3 +1,4 @@
+drop database if exists student_management;
 create database  student_management;
 use student_management;
 CREATE TABLE teacher (
