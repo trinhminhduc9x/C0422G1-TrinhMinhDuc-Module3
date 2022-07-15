@@ -37,8 +37,8 @@ CREATE TABLE nha_cung_cap (
 );
 
 CREATE TABLE so_dien_thoai (
-    masdt INT ,
-    nhapSo VARCHAR(45) PRIMARY KEY ,
+    masdt INT,
+    nhapSo VARCHAR(45) PRIMARY KEY,
     FOREIGN KEY (masdt)
         REFERENCES nha_cung_cap (maNCC)
 );

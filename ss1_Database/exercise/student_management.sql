@@ -1,6 +1,6 @@
-drop database if exists student_management;
-create database  student_management;
-use student_management;
+DROP DATABASE IF EXISTS student_management;
+CREATE DATABASE  student_management;
+USE student_management;
 CREATE TABLE teacher (
     id INT AUTO_INCREMENT,
     name VARCHAR(50),
