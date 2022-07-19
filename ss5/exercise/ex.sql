@@ -29,8 +29,8 @@ VALUE (1,'vang',20,6,'di mua vang', 1),
 
 CREATE UNIQUE INDEX i_code 
 	ON products(product_code);
-CREATE  INDEX i_comPosite_producT 
-	ON PRODucTS(PRoduct_name,product_coDE);
+CREATE  INDEX i_composite_product 
+	ON products(product_name,product_code);
 DROP INDEX i_code
 	ON products;
 DROP INDEX i_composite_product

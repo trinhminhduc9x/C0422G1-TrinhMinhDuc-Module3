@@ -37,8 +37,8 @@ FROM
     hop_dong_chi_tiet hdct ON hdct.ma_hop_dong = hd.ma_hop_dong
         LEFT JOIN
     dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
-WHERE
-     YEAR(hd.ngay_lam_hop_dong) = '2021'
+WHERE lk.ten_loai_khach ='Platinium' 
+		AND YEAR(hd.ngay_lam_hop_dong) = '2021'
 GROUP BY k.ma_loai_khach
 HAVING SUM((IFNULL(hdct.so_luong * dvdk.gia, 0)) + chi_phi_thue) > 1000000;
 
@@ -67,6 +67,8 @@ FROM
     hop_dong_chi_tiet hdct ON hdct.ma_hop_dong = hd.ma_hop_dong
         LEFT JOIN
     dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+WHERE lk.ten_loai_khach ='Platinium' 
+		AND YEAR(hd.ngay_lam_hop_dong) = '2021'
 GROUP BY k.ma_khach_hang
 HAVING SUM((IFNULL(hdct.so_luong * dvdk.gia, 0)) + chi_phi_thue) > 1000000)khach_new);
 SET sql_safe_updates =1;
