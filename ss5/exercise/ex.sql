@@ -28,7 +28,7 @@ VALUE (1,'vang',20,6,'di mua vang', 1),
 -- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
 
 CREATE UNIQUE INDEX i_code 
-	ON proDUCTS(pRODUCT_CODE);
+	ON products(product_code);
 CREATE  INDEX i_comPosite_producT 
 	ON PRODucTS(PRoduct_name,product_coDE);
 DROP INDEX i_code
@@ -152,11 +152,11 @@ call update_products(7,7,'tien',12.12,12,'vang 1',1);
 
 -- 4. Tạo store procedure xoá sản phẩm theo id
 delimiter //
-	CREATE PROCEDURE DELETE_by_id(id_delEte INT) 
+	CREATE PROCEDURE delete_by_id(id_delete INT) 
 	BEGIN 
-		DELETE FROM PrODUCts
-		WHERE iD = Id_deLete;
+		DELETE FROM products
+		WHERE id = id_delete;
 	END //
-DELimiter ;
+delimiter ;
 
-CALL DELETE_by_id(5);
+CALL delete_by_id(5);
